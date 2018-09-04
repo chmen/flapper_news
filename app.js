@@ -13,7 +13,8 @@ function($scope){
   ];
 
   $scope.addPost = function(){
-    $scope.posts.push({title: 'A new post!', upsvotes: 0});
+    $scope.posts.push({title: $scope.title, upsvotes: 0});
+    $scope.title = '';
   };
 
 }]);
