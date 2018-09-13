@@ -28,6 +28,15 @@ function($stateProvider, $urlRouterProvider) {
   return o;
 }])
 
+
+.controller('PostsCtrl', [
+'$scope',
+'$stateParams',
+'posts',
+function($scope, $stateParams, posts){
+
+}])
+
 .controller('MainCtrl', [
 '$scope',
 'posts',
@@ -50,5 +59,5 @@ function($scope, posts){
     post.upvotes +=1;
   };
 
-}]);
+}])
 
