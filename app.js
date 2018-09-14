@@ -53,7 +53,7 @@ function($scope, posts){
       upvotes: 0,
       comments: [
         {author: 'Joe', body: 'Cool post!', upvotes: 0},
-        {author: 'Frenki', body: 'KGAM', upvotes: 0}
+        {author: 'Bob', body: 'Great idea but everything is wrong!', upvotes: 0}
       ]
     });
     $scope.title = '';
