@@ -34,7 +34,7 @@ function($stateProvider, $urlRouterProvider) {
 '$stateParams',
 'posts',
 function($scope, $stateParams, posts){
-
+  $scope.post = posts.posts[$stateParams.id];
 }])
 
 .controller('MainCtrl', [
@@ -50,7 +50,12 @@ function($scope, posts){
     $scope.posts.push({
       title: $scope.title,
       link: $scope.link,
-      upvotes: 0});
+      upvotes: 0,
+      comments: [
+        {author: 'Joe', body: 'Cool post!', upvotes: 0},
+        {author: 'Frenki', body: 'KGAM', upvotes: 0}
+      ]
+    });
     $scope.title = '';
     $scope.link = '';
   };
