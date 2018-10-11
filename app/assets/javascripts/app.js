@@ -14,19 +14,14 @@ function($stateProvider, $urlRouterProvider) {
 
     .state('posts', {
       url: '/posts/{id}',
-      templateUrl: '/posts.html',
+      templateUrl: 'posts/_posts.html',
       controller: 'PostsCtrl'
     });
 
   $urlRouterProvider.otherwise('home');
 }])
 
-.factory('posts', [function(){
-  var o= {
-    posts: []
-  };
-  return o;
-}])
+
 
 
 
