@@ -7,9 +7,15 @@ function($http){
   };
 
   o.getAll = function() {
-    return $http.get('/posts.json').success(function(data){
-      angular.copy(data, o.posts);
-    });
+    $http({
+      method: 'GET',
+      url: '/posts.json'
+    }).then(function(response){
+        angular.copy(response.data, o.posts);
+      }, function(error){
+        console.log("mighty error accure")
+      });
+
   };
 
   return o;
