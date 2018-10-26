@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   resources :posts, only: [:create, :index, :show] do
     resources :comments, only: [:show, :create] do
       member do
-        put'/upvotes' => 'comments#upvote'
+        put'/upvote' => 'comments#upvote'
       end
     end
 
     member do
-      put '/upvotes' => 'posts#upvote'
+      put '/upvote' => 'posts#upvote'
     end
   end
 end
