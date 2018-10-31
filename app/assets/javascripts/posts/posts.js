@@ -6,6 +6,12 @@ function($http){
     posts: []
   };
 
+  o.get = function(id) {
+    return $http.get('/posts/' + id + '.json').then(function(res){
+      return res.data;
+    });
+  }
+
   o.getAll = function() {
     $http({
       method: 'GET',
@@ -29,6 +35,17 @@ function($http){
     return $http.put('/posts/' + post.id + '/upvote.json')
       .then(function(data){
         post.upvotes += 1;
+      });
+  };
+
+  o.addComment = function(id, comment) {
+    return $http.post('/posts/' + id + '/comments.json', comment);
+  };
+
+  o.upvoteComment = function(post, comment) {
+    return $http.put('/posts' + id + '/comments/' + comment.id + 'upvote.json')
+      .then(function(data){
+        comment.upvotes +=1;
       });
   };
 
